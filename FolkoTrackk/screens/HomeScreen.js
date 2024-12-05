@@ -10,8 +10,10 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+
   const handleLogin = () => {
-    // Lógica de inicio de sesión
+    // se agregar la lógica de inicio de sesión si es necesario
+    navigation.navigate('Catalogo'); // Navega a la pantalla "Catalogo"
   };
 
   return (
@@ -35,7 +37,7 @@ const Login = () => {
           onChangeText={(text) => setPassword(text)}
         />
        
-        <Button title="Log in" onPress={()=> navigation.navigate("Catalogo")} />
+       <Button title="Log in" onPress={handleLogin} /> 
       </View>
     </View>
   );
@@ -75,3 +77,13 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
+
+
+
+
+
+
+
+
+
+// ... estilos

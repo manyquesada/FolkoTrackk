@@ -1,8 +1,11 @@
 import React from 'react';
 
 import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Catalogo = () => {
+
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.container}>
       {/* Header */}
@@ -29,8 +32,8 @@ const Catalogo = () => {
 
       {/* Secciones extra */}
       <View style={styles.extraSections}>
-        <SectionItem imageSource={require('./assets/alumnos.png')} title="Alumnos" />
-        <SectionItem imageSource={require('/assets/agends.png')} title="Agenda" />
+      <SectionItem imageSource={require('./assets/alumnos.png')} title="Alumnos" onPress={() => navigation.navigate('CatalogoAlumnos')} />
+      <SectionItem imageSource={require('/assets/agends.png')} title="Agenda" onPress={() => navigation.navigate('Calendar')} />
       </View>
     </ScrollView>
   );
